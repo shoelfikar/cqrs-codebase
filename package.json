@@ -1,0 +1,92 @@
+{
+  "name": "codebase-cqrs",
+  "version": "1.0.0",
+  "description": "Codebase using CQRS pattern.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "mocha \"test/**/*_test.js\" --timeout=5000 --exit",
+    "cover": "nyc _mocha \"test/**/*_test.js\" --recursive --exit",
+    "lint": "eslint bin test",
+    "lint:fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/novalyezu/codebase-cqrs.git"
+  },
+  "keywords": [
+    "codebase",
+    "boiler-plate",
+    "cqrs",
+    "nodejs",
+    "arkademy"
+  ],
+  "author": "Arkademy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/novalyezu/codebase-cqrs/issues"
+  },
+  "homepage": "https://github.com/novalyezu/codebase-cqrs#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "confidence": "^4.0.2",
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "generic-pool": "^3.7.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "kafka-node": "^5.0.0",
+    "mongodb": "^3.5.8",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-http": "^0.3.0",
+    "redis": "^3.0.2",
+    "restify": "^8.5.1",
+    "restify-cors-middleware": "^1.1.1",
+    "restify-errors": "^8.0.2",
+    "validate.js": "^0.13.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.20.0",
+    "hippie": "^0.5.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^7.2.0",
+    "nyc": "^15.0.1",
+    "pre-commit": "^1.2.2",
+    "sinon": "^9.0.2"
+  },
+  "nyc": {
+    "lines": 10,
+    "statements": 10,
+    "functions": 10,
+    "branches": 10,
+    "check-coverage": true,
+    "include": [
+      "bin/**/*.js"
+    ],
+    "exclude": [
+      "index.js",
+      "bin/app/server.js"
+    ],
+    "reporter": [
+      "html",
+      "text",
+      "lcov",
+      "text-summary"
+    ],
+    "all": true,
+    "cache": true,
+    "report-dir": "./coverage"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
+}
