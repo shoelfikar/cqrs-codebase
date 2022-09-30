@@ -30,7 +30,7 @@
   "homepage": "https://github.com/novalyezu/codebase-cqrs#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "confidence": "^4.0.2",
+    "confidence": "^5.0.1",
     "crypto": "^1.0.1",
     "dotenv": "^8.2.0",
     "generic-pool": "^3.7.1",
